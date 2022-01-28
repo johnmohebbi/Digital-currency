@@ -9,7 +9,7 @@
     src: url('./font/BYekan-webfont.eot') format('eot');
     src: url('./font/BYekan-webfont.woff') format('woff');
 } */
-@tailwind base;
+/* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
 

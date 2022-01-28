@@ -7,6 +7,7 @@ import Landing from "./component/Landing";
 const App = () => {
   return (
     <Provider store={store}>
+      
       <Landing />
     </Provider>
     
