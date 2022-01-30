@@ -1,12 +1,12 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  separator: ':',
-  important: true,
+  // separator: ':',
+  // important: true,
   
  
   theme: {
     screens:{
-      'xs':"450px",
+      'xs':"400px",
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
 
@@ -24,9 +24,12 @@ module.exports = {
     },
     extend: {
       fontFamily:{
-        "bYakan":'bYakan',
-        "vazir":'vazir10',
+        "RobotoM":'RobotoMedium',
+        
       },
+      flexGrow: {
+        '2': 2
+      }
      
     },
   },

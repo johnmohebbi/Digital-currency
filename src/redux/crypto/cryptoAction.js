@@ -29,6 +29,19 @@ const fetchCrypto = () =>{
             })
     }
 }
+const changeDarkMode = () =>{
+    return {
+        type:"DARK_MODE",
+    };
+}
+const filter = (search) =>{
+    return {
+        type:"FILTER_CRYPTO",
+        searchValue:search
+    };
+}
 export {
     fetchCrypto,
+    changeDarkMode,
+    filter,
 }

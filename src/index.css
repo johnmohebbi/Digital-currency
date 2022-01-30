@@ -1,16 +1,14 @@
-/* @font-face {
-    font-family: "vazir10";
-    src: url('./font/Vazir.ttf') format('ttf');
-    
+font-face {
+  font-family: "RobotoMedium";
+  src: url("assets/fonts/Roboto/Roboto-Medium.eot");
+  src: url("assets/fonts/Roboto/Roboto-Medium.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/Roboto/Roboto-Medium.woff2") format("woff2"),
+    url("assets/fonts/Roboto/Roboto-Medium.woff2") format("woff"),
+    url("assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
 }
-@font-face {
-    font-family: "bYakan";
-    src: url('./font/BYekan-webfont.ttf') format('ttf');
-    src: url('./font/BYekan-webfont.eot') format('eot');
-    src: url('./font/BYekan-webfont.woff') format('woff');
-} */
-/* @tailwind base; */
+
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-

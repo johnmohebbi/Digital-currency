@@ -6,11 +6,11 @@ import store from "./redux/store";
 import Landing from "./component/Landing";
 const App = () => {
   return (
-    <Provider store={store}>
-      
-      <Landing />
-    </Provider>
-    
+    <div className="font-RobotoM">
+      <Provider store={store}>
+        <Landing />
+      </Provider>
+    </div>
   );
 };
 
