@@ -3,7 +3,6 @@ const initialState = {
     cryptos:[],
     error:'',
     darkMode:false,
-    filterCrypto:[],
 }
 const cryptoReducer = (state=initialState,action) =>{
     switch(action.type) {
@@ -30,8 +29,7 @@ const cryptoReducer = (state=initialState,action) =>{
             ...state,
             darkMode:!state.darkMode,
         }
-        case "FILTER_CRYPTO":
-            const filter = state.cryptos.filter(crypto => crypto.name.includes(action.searchValue))
+        
         default : return state;
     }
 }

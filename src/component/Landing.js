@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Loader from "../assets/Loader";
+import Skeleton from "../assets/Skeleton";
 //actions
 import { fetchCrypto } from "../redux/crypto/cryptoAction";
 import Coin from "./Coin";
@@ -12,9 +12,10 @@ const Landing = () => {
   const dispatch = useDispatch();
   const searchHandler = (e) => {
     setSearchValue(e.target.value);
-    const lg = data.cryptos.filter((coin) =>coin.name.toLowerCase().includes(e.target.value.toLowerCase()));
-    setFilterCoin({...filterCoin,cryptos:lg})
-    
+    const lg = data.cryptos.filter((coin) =>
+      coin.name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    setFilterCoin({ ...filterCoin, cryptos: lg });
   };
   useEffect(() => {
     dispatch(fetchCrypto());
@@ -30,20 +31,32 @@ const Landing = () => {
       <section className="font-RobotoM">
         {Object.keys(filterCoin).length ? (
           filterCoin.loader ? (
-            <Loader />
+            // <Loader />
+            <div className="mt-52 sm:mt-44">
+              <Skeleton />
+              <Skeleton />
+              <Skeleton />
+              <Skeleton />
+              <Skeleton />
+              <Skeleton />
+            </div>
           ) : filterCoin.error ? (
             <h1>{filterCoin.error}</h1>
           ) : (
-            <div className={`${data.darkMode ? "bg-[#060930]": "bg-[#f1faee]"}`}>
+            <div
+              className={`${data.darkMode ? "bg-[#060930]" : "bg-[#f1faee]"}`}
+            >
               <div
                 className={`
                   
-                 h-44 flex justify-center transition-colors	duration-100`}
+                 mt-16 h-36 sm:h-40 flex justify-center transition-colors	duration-100`}
               >
                 <input
-                  className={`w-[40%] 
+                  className={`w-[70%] sm:w-[40%] 
                   ${
-                    data.darkMode ? "bg-[#f1faee] text-[#060930] shadow-[#f1faee]  focus:shadow-[#060930] placeholder:text-sky-400" : "placeholder:text-blue-50 text-blue-50 bg-sky-400"
+                    data.darkMode
+                      ? "bg-[#f1faee] text-[#060930] shadow-[#f1faee]  focus:shadow-[#060930] placeholder:text-sky-400"
+                      : "placeholder:text-blue-50 text-blue-50 bg-sky-400"
                   }	  focus:shadow-xl	 focus:shadow-[#fff8f354] font-sans rounded-sm text-lg font-semibold  h-1/4 pl-3 placeholder:text-lg placeholder:font-semibold  focus:outline-none self-center shadow-md`}
                   type="text"
                   value={searchValue}
@@ -52,7 +65,8 @@ const Landing = () => {
                 />
               </div>
               <section className="font-sans  flex flex-col items-center">
-                {filterCoin.cryptos.map((coin) => {
+                {filterCoin.cryptos.map((coin,index) => {
+                  
                   return (
                     <Coin
                       key={coin.id}
@@ -78,4 +92,4 @@ const Landing = () => {
 
 export default Landing;
 
-// bg-[#f4f9f9] 
+// bg-[#f4f9f9]
